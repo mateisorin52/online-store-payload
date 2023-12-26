@@ -10,13 +10,13 @@ import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
-const jost = Jost({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-jost',
-  display: 'swap',
-  adjustFontFallback: false,
-})
+// const jost = Jost({
+//   subsets: ['latin'],
+//   weight: ['400', '700'],
+//   variable: '--font-jost',
+//   display: 'swap',
+//   adjustFontFallback: false,
+// })
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={jost.variable}>
+      <body>
         aaa
         <Providers>
           <AdminBar />
