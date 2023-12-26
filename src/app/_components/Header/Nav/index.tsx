@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { Header as HeaderType, User } from '../../../../payload/payload-types'
 import { useAuth } from '../../../_providers/Auth'
+import { Button } from '../../Button'
 import { CartLink } from '../../CartLink'
 import { CMSLink } from '../../Link'
 
@@ -29,11 +30,17 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
         return <CMSLink key={i} {...link} appearance="none" />
       })}
       <CartLink />
+      <Link href="/create-account">Create Account</Link>
       {user && <Link href="/account">Account</Link>}
       {!user && (
         <React.Fragment>
-          <Link href="/login">Login</Link>
-          <Link href="/create-account">Create Account</Link>
+          <Button
+            el="link"
+            label="Login"
+            appearance="primary"
+            onClick={() => (window.location.href = '/login')}
+            href="/login"
+          />
         </React.Fragment>
       )}
     </nav>
