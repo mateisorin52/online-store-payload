@@ -13,6 +13,7 @@ FROM base as runtime
 
 ENV NODE_ENV=production
 ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
+ENV NODE_OPTIONS=--max_old_space_size=2048
 
 WORKDIR /home/node/app
 COPY package*.json  ./
